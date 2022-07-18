@@ -8,6 +8,11 @@ A collection of useful shell scripts.
 
 -🚀 `getkeys.sh` : All public keys of the GitHub user are downloaded and written to the `authorized_keys` file
 
+```
+# Example
+$ curl -# https://raw.githubusercontent.com/kori2000/shell-script-helper/main/getkeys.sh | bash /dev/stdin <<GitHub_User>>
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
