@@ -14,7 +14,7 @@ curl -# https://raw.githubusercontent.com/kori2000/shell-script-helper/main/getk
 ```
 #### Example (with URL shortener)
 ```
-curl -# http://script-gks.kori.rip | bash /dev/stdin <<GitHub_User>>
+curl -# http://script-gks.kori.rip -L | bash /dev/stdin <<GitHub_User>>
 ```
 
 
