@@ -15,7 +15,7 @@ fi
 
 GITHUBUSER=$1
 
-curl -s https://github.com/${GITHUBUSER}.keys >$KFILE
+curl -s https://github.com/${GITHUBUSER}.keys > $KFILE
 
 LINE=$(head -n 1 $KFILE)
 
