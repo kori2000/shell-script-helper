@@ -20,7 +20,6 @@ curl -# https://kori.rip/sh/<<GitHub_User>> | bash
 
 #### Demo Shortener
 curl -# https://kori.rip/sh/kori2000 | bash
-
 ```
 
 ## Contributing
