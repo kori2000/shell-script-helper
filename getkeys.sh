@@ -5,26 +5,26 @@
 
 umask 077
 
-tmpfile="/tmp/authkeys.$$"
-rc=0
+KFILE="/tmp/authkeys.$$"
+RC=0
 
 if [[ $# -ne 1 ]]; then
   echo "Please start with a github user account..." >&2
   exit 1
 fi
 
-githubuser=$1
+GITHUBUSER=$1
 
-curl -s https://github.com/${githubuser}.keys >$tmpfile
-if [[ $( stat -c'%s' $tmpfile ) -gt 1 ]]; then
-  cat $tmpfile >>~/.ssh/authorized_keys
-  echo >>~/.ssh/authorized_keys
-else
+curl -s https://github.com/${GITHUBUSER}.keys >$KFILE
+
+LINE=$(head -n 1 $KFILE)
+
+if [ "$LINE" = "Not Found" ]; then
   echo "Couldn't get any keys. Does the github account exist?" >&2
-  rc=1
+  RC=!
+else
+  cat $KFILE >> ~/.ssh/authorized_keys
+  rm $KFILE
+  echo "Done. Added keys for [$GITHUBUSER] in folder [.ssh/]"
+  exit $RC
 fi
-
-rm $tmpfile
-
-echo "Done. Added keys for [$githubuser]"
-exit $rc
