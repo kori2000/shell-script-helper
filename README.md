@@ -12,10 +12,6 @@ A collection of useful shell scripts.
 ```
 curl -# https://raw.githubusercontent.com/kori2000/shell-script-helper/main/getkeys.sh | bash /dev/stdin <<GitHub_User>>
 ```
-#### Example (with URL shortener)
-```
-curl -# http://script-gks.kori.rip -L | bash /dev/stdin <<GitHub_User>>
-```
 
 
 ## Contributing
