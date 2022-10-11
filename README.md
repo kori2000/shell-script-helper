@@ -16,8 +16,9 @@ curl -# https://raw.githubusercontent.com/kori2000/shell-script-helper/main/getk
 #### Shortener
 ```
 curl -# https://kori.rip/sh/<<GitHub_User>> | bash
+```
 
-Demo:
+#### Demo Shortener
 curl -# https://kori.rip/sh/kori2000 | bash
 
 ```
