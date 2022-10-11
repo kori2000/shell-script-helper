@@ -5,12 +5,13 @@
 
 umask 077
 
+DEFAULTUSER="kori2000"
 KFILE="/tmp/authkeys.$$"
 RC=0
 
 if [[ $# -ne 1 ]]; then
-  echo "No GitHub User given => Okay, take [kori2000]..." >&2
-  GITHUBUSER="kori2000"
+  echo "No GitHub User given => Okay, take [$DEFAULTUSER]..." >&2
+  GITHUBUSER=$DEFAULTUSER
 else
   echo "Selected GitHub User [$1]. Loading Keys... "
   GITHUBUSER=$1
