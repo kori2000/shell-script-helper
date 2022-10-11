@@ -13,6 +13,14 @@ A collection of useful shell scripts.
 curl -# https://raw.githubusercontent.com/kori2000/shell-script-helper/main/getkeys.sh | bash /dev/stdin <<GitHub_User>>
 ```
 
+#### Shortener
+```
+curl -# https://kori.rip/sh/<<GitHub_User>> | bash
+
+Demo:
+curl -# https://kori.rip/sh/kori2000 | bash
+
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
