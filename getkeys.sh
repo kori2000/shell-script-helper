@@ -9,22 +9,23 @@ KFILE="/tmp/authkeys.$$"
 RC=0
 
 if [[ $# -ne 1 ]]; then
-  echo "Please start with a github user account..." >&2
-  exit 1
+  echo "No GitHub User given => Okay, take [kori2000]..." >&2
+  GITHUBUSER="kori2000"
+else
+  echo "Selected GitHub User [$1]. Loading Keys... "
+  GITHUBUSER=$1
 fi
-
-GITHUBUSER=$1
 
 curl -s https://github.com/${GITHUBUSER}.keys > $KFILE
 
 LINE=$(head -n 1 $KFILE)
 
 if [ "$LINE" = "Not Found" ]; then
-  echo "Couldn't get any keys. Does the github account exist?" >&2
+  echo "Couldn't get any Keys for GitHub User [$GITHUBUSER] :(" >&2
   RC=!
 else
   cat $KFILE >> ~/.ssh/authorized_keys
   rm $KFILE
-  echo "Done. Added keys for [$GITHUBUSER] in folder [.ssh/]"
+  echo "Done. Added keys from [$GITHUBUSER] :)"
   exit $RC
 fi
